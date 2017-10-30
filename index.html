@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!--  Meta  -->
+  <meta charset="UTF-8" />
+  <title>Random Quote Machine</title>
+
+  <!--  Styles  -->
+  <link rel="stylesheet" href="styles/index.processed.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <h5 class="mt-5">User Story: I can press a button to tweet out a quote.</h5>
+    <div class="card">
+      <blockquote class="blockquote m-3">
+        <div id="quote" class="mb quote">          
+        </div>
+
+        <footer class="blockquote-footer">Someone famous in
+          <cite title="Source Title">Source Title</cite>
+        </footer>
+      </blockquote>
+      <div class="card-footer">
+        <div class="row">
+          <div>
+            <button id="getQuote" class="btn btn-primary">
+              New Quote
+            </button>
+          </div>
+          <div>
+            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class=" btn twitter-share-button" data-text="yes" data-show-count="false">Tweet</a>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="scripts/index.js"></script>
+</body>
+
+</html>
