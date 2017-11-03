@@ -2,38 +2,41 @@ var rand = function (length) {
   return Math.floor(Math.random() * length);
 };
 
+var getQuotes = function() {
+  $.getJSON("/json/quotes.json", function (json) {
+    var quote = "";
+    var author = "";
+    var data = "";
+    var res = rand(json.length);
 
-$(document).ready(function () {
-
-  $("#quote").text("Welcome to the Random Quote Generator");
-  $("#author").text("We hope you will like it");
-
-  $("#getQuote").on("click", function () {
-    $.getJSON("/json/quotes.json", function (json) {
-      var htmlq = "";
-      var htmla = "";
-      var data = "";
-      var res = rand(json.length);
-      console.log(res);
-
-      json = json.filter(function (val) {
-        return (val.id === res);
-      });
-      json.forEach(function (val) {
-        htmlq += val.quote
-        htmla += val.author
-
-        data += "<a href=" + '"https://twitter.com/share?ref_src=twsrc%5Etfw"' + "class="+ '"twitter-share-button"' +  "data-text=" + '"' + val.quote + " by " + val.author + '"' + "data-show-count=" + '"false"'+ "> Tweet</a >"
-        data += "<script async src=" + '"' + "https://platform.twitter.com/widgets.js" + '"' + "charset=" + '"' + "utf-8" + '"' + "></script>"
-      });
-      
-      $("#quote").text(htmlq);
-      $("#author").text(htmla);
-      $("#tweet").html(data);
+    json = json.filter(function (val) {
+      return (val.id === res);
+    });
+    json.forEach(function (val) {
+      quote += val.quote
+      author += val.author
 
     });
+
+
+    $("#quote").text(quote);
+    $("#author").text(author);
+
+  });
+}
+$(document).ready(function () {
+  getQuotes();
+  $("#getQuote").on("click", function () {
+    $("#getQuote").blur();
+    getQuotes();    
+  });
+
+  $("#b").on('click', function () {
+    console.log('clicked');
+    $("#b").blur();
+
+    window.open("https://twitter.com/intent/tweet?text=" + $("#quote").text() + " by " + $("#author").text() + " " + "http://localhost:8080/");
   });
 });
-
 
 console.log("index.js end");
