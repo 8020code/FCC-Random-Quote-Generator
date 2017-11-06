@@ -8,25 +8,30 @@
   <!--  Styles  -->
   <style>
     .container {
-      margin-top: 40px;
+      margin-top: 40px;    
+      font-family: 'Bad Script', cursive;
     }
+    #title {
+      font-family: 'Bubblegum Sans', cursive;}
+      
   </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Bad+Script|Bubblegum+Sans" rel="stylesheet">
 </head>
 
 <body>
 
   <div class="container">
 
-    <h4>Welcome to the Random Quote Generator</h4>
+    <h4 id="title">Welcome to the Random Quote Machine</h4>
 
     <div class="card">
       <blockquote class="blockquote m-3">
         <div class="mb">
-          <div id="quote">
+          <p id="quote">
             <!-- quote here-->
-          </div>
+          </p>
         </div>
 
         <footer class="blockquote-footer">
@@ -42,7 +47,10 @@
               New Quote
             </button>
             <button id="b" class="btn btn-outline-primary">
-              <i class="fa fa-twitter" aria-hidden="true"><i class="fa fa-share" aria-hidden="true"></i></i><span> Share</span>
+              <i class="fa fa-twitter" aria-hidden="true">
+                <i class="fa fa-share" aria-hidden="true"></i>
+              </i>
+              <span> Share</span>
             </button>
           </div>
         </div>
@@ -50,16 +58,18 @@
     </div>
 
   </div>
+  
 
 
   <!-- Scripts -->
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
     crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
     crossorigin="anonymous"></script>
-  <script src="scripts/index.js"></script>
+  <script src="scripts/external.js"></script>
 
 </body>
 
